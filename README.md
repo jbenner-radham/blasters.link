@@ -1,2 +1,3 @@
-# blasters.link
-Blasters.link website.
+blasters.link
+=============
+[Blasters.link](http://blasters.link) website.
