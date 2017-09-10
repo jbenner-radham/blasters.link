@@ -7,16 +7,41 @@
     </head>
     <body>
         <main>
-            <!-- [content] -->
-            <ul>
-                <blaster-item v-for="blaster in blasters" :key="blaster.upc" :blaster="blaster"/>
-            </ul>
+            <dl>
+                <blaster v-for="blaster in blasters" :key="blaster.upc" :blaster="blaster" />
+            </dl>
         </main>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            dt::after {
+                content: ": ";
+            }
+
+            .p-name {
+                font-size: 18px;
+                text-decoration: underline;
+            }
+        </style>
         <script src="https://unpkg.com/vue"></script>
         <script>
-            Vue.component('blaster-item', {
+            Vue.component('blaster', {
                 props: ['blaster'],
-                template: `<li>{{ blaster.name }}</li>`
+                template: `
+                    <article class="h-product">
+                        <h1 class="p-name">{{ blaster.name }}</h1>
+                        <dt>Brand</dt>
+                        <dd class="p-brand">{{ blaster.brand }}</dd>
+                        <dt>Series</dt>
+                        <dd class="p-x-series">{{ blaster.series }}</dd>
+                        <dt>UPC</dt>
+                        <dd class="u-identifier">{{ blaster.upc }}</dd>
+                        <dt>MSRP</dt>
+                        <dd class="p-price">{{ blaster.msrp }}</dd>
+                    </article>
+                `
             });
 
             let vm = new Vue({
@@ -28,17 +53,7 @@
 
             fetch('data/blasters.json').then(response => {
                 response.text().then(json => {
-                    vm.blasters = JSON.parse(json);
-                    /*
-                    let pre = document.createElement('pre');
-                    let code = document.createElement('code');
-
-                    code.innerText = json;
-
-                    code.classList.add('json');
-                    pre.appendChild(code);
-                    document.body.appendChild(pre);
-                    */
+                    vm.blasters = JSON.parse(json) || [];
                 });
             });
         </script>
