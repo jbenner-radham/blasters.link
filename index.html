@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>blasters.link</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     </head>
     <body>
         <main>
@@ -12,17 +14,14 @@
             </dl>
         </main>
         <style>
-            body {
-                font-family: sans-serif;
-            }
-
             dt::after {
-                content: ": ";
+                content: ":";
             }
 
-            .p-name {
-                font-size: 18px;
-                text-decoration: underline;
+            .card {
+                margin: 1rem;
+                padding: 1rem;
+                width: 20rem;
             }
         </style>
         <script src="https://unpkg.com/vue"></script>
@@ -30,7 +29,7 @@
             Vue.component('blaster', {
                 props: ['blaster'],
                 template: `
-                    <article class="h-product">
+                    <article class="h-product card">
                         <h1 class="p-name">{{ blaster.name }}</h1>
                         <dt>Brand</dt>
                         <dd class="p-brand">{{ blaster.brand }}</dd>
