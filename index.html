@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="dc: http://purl.org/dc/elements/1.1/ dcterms: http://purl.org/dc/terms/">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title>blasters.link</title>
+    </head>
+    <body>
+        <main>
+            <!-- [content] -->
+            <ul>
+                <blaster-item v-for="blaster in blasters" :key="blaster.upc" :blaster="blaster"/>
+            </ul>
+        </main>
+        <script src="https://unpkg.com/vue"></script>
+        <script>
+            Vue.component('blaster-item', {
+                props: ['blaster'],
+                template: `<li>{{ blaster.name }}</li>`
+            });
+
+            let vm = new Vue({
+                el: 'main',
+                data: {
+                    blasters: []
+                }
+            });
+
+            fetch('data/blasters.json').then(response => {
+                response.text().then(json => {
+                    vm.blasters = JSON.parse(json);
+                    /*
+                    let pre = document.createElement('pre');
+                    let code = document.createElement('code');
+
+                    code.innerText = json;
+
+                    code.classList.add('json');
+                    pre.appendChild(code);
+                    document.body.appendChild(pre);
+                    */
+                });
+            });
+        </script>
+    </body>
+</html>

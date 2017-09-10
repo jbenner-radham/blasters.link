@@ -1,0 +1,17 @@
+{
+  "name": "blasters.link",
+  "version": "0.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/jbenner-radham/blasters.link.git",
+  "author": "James Benner <james.benner@gmail.com> (http://www.jamesbenner.com/)",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "js-yaml": "^3.9.1"
+  },
+  "scripts": {
+    "json": "js-yaml data/blasters.yml > data/blasters.json",
+    "start": "http-server"
+  }
+}
