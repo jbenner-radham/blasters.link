@@ -1,18 +1,30 @@
 ---
 - brand: Nerf
+  name: Crosscut
+  series: Zombie Strike
+  upc: 630509338733
+  msrp: $14.99 USD
+
+- brand: Nerf
   name: Dreadbolt
   series: Zombie Strike
   upc: 630509520534
-  msrp: $49.99
+  msrp: $49.99 USD
+
+- brand: Nerf
+  name: Pocketstrike
+  series: N-Strike Elite
+  upc: 630509444205
+  msrp: $11.99 USD (?)
 
 - brand: Nerf
   name: Regulator
   series: Modulus
   upc: 630509523078
-  msrp: $59.99
+  msrp: $59.99 USD
 
 - brand: Nerf
   name: The Judge
   series: Doomlands
   upc: 630509520428
-  msrp: $59.99
+  msrp: $59.99 USD
